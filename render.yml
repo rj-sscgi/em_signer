@@ -1,0 +1,9 @@
+services:
+  - name: my-dotnet-api
+    type: web
+    plan: free
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 80
