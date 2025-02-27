@@ -1,14 +1,14 @@
-# Use a base image with ASP.NET Framework support
+# Use a base image with ASP.NET Core support
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 
-WORKDIR /inetpub/wwwroot
+# Set the working directory inside the container
+WORKDIR /app
 
 # Copy all files from your project to the container
 COPY . .
 
-# Expose port 80
+# Expose the port your app will run on
 EXPOSE 80
 
-# Start IIS when the container runs
-CMD ["sh", "-c", "your-command-here"]
-
+# Run the application using Kestrel
+CMD ["dotnet", "YourApp.dll"]
