@@ -10,4 +10,5 @@ COPY . .
 EXPOSE 80
 
 # Start IIS when the container runs
-CMD ["cmd", "/c", "ping -t localhost"]
+CMD ["sh", "-c", "your-command-here"]
+
